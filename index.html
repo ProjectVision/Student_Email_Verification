@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<!--<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -50,7 +50,36 @@
       }
     </script>
 
-    <!-- Client ID:  289651400400-gugherms1fqt3q5q8vd07vvi72tgbss8.apps.googleusercontent.com Client Secret: K5lwBnM2TL8MhGWxfKgeMRyh --> 
+     Client ID:  289651400400-gugherms1fqt3q5q8vd07vvi72tgbss8.apps.googleusercontent.com Client Secret: K5lwBnM2TL8MhGWxfKgeMRyh  
   </body>
-</html>
+</html> 
+-->
 
+<html lang="en">
+<head>
+  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+</head>
+<body>
+  <div id="my-signin2"></div>
+  <script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script>
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+</body>
+</html>
