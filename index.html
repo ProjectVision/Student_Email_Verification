@@ -4,8 +4,10 @@
 
 <head>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/style.css">
     <script src="https://apis.google.com/js/api:client.js"></script>
+    <!-- For appending data to form -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 
     <script>
         var googleUser = {};
@@ -16,7 +18,7 @@
                     client_id: '289651400400-0vq2c3ln2brgq6jqoh4ttdahu27456k2.apps.googleusercontent.com',
                     cookiepolicy: 'single_host_origin',
                     // Request scopes in addition to 'profile' and 'email'
-                    //scope: 'additional_scope'
+                    // scope: 'additional_scope'
                 });
                 attachSignin(document.getElementById('customBtn'));
             });
@@ -105,6 +107,9 @@
         </div>
     </div>
     <div id="name"></div>
+
+
+
     <script>
         startApp();
     </script>
