@@ -36,6 +36,8 @@
             console.log(element.id);
             auth2.attachClickHandler(element, {},
                 function(googleUser) {
+                    var googleUser.getBasicProfile().getName() = "entry.883014612"; // Trying to define name for entry into form
+
                     document.getElementById('name').innerText = "Signed in as: " +
                         googleUser.getBasicProfile().getName(); //.hide()
                 },
@@ -43,7 +45,61 @@
                     alert(JSON.stringify(error, undefined, 2));
                 });
         }
+
+
+
+        function postToGoogle() {
+            var field1 = $(var name).val();
+            /*
+                var field2 = $("#emailField").val();
+                var field3 = $("#mobField").val();
+                var field4 = $("#cinema option:selected").text();
+ 				
+				if(field1 == ""){
+					alert('Please Fill Your Name');
+					document.getElementById("nameField").focus();
+					return false;
+				}
+				if(field2 == ""){
+					alert('Please Fill Your Email');
+					document.getElementById("emailField").focus();
+					return false;
+				}
+				if(field3 == "" || field3.length > 10 || field3.length < 10){
+					alert('Please Fill Your Mobile Number');
+					document.getElementById("mobField").focus();
+					return false;
+				}
+                */
+
+
+
+            $.ajax({
+                url: "https://docs.google.com/forms/d/e/1FAIpQLSfQo0e7hvwJ96pUZWGDNan6TgEnOVszTBxxGhcgm8xZl6NHug/formResponse?",
+                data: {
+                    "entry.883014612": field1
+                        /*
+                        "entry.1460631936": field2,
+                        "entry.904964149": field3,
+                        "entry.1878256062": field4
+                        */
+                },
+                type: "POST",
+                dataType: "xml",
+                success: function(d) {},
+                error: function(x, y, z) {
+
+                    $('#success-msg').show();
+                    $('#form').hide();
+
+                }
+            });
+            return false;
+        }
     </script>
+
+
+
 
 
 
@@ -59,7 +115,6 @@
             border: thin solid #888;
             box-shadow: 1px 1px 1px grey;
             white-space: nowrap;
-            align: center;
         }
         
         #customBtn:hover {
