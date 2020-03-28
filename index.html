@@ -36,7 +36,7 @@
             console.log(element.id);
             auth2.attachClickHandler(element, {},
                 function(googleUser) {
-                    document.getElementById('name').innerText = "Signed in as: " +
+                    document.getElementById('email').innerText = "Signed in as: " +
                         googleUser.getBasicProfile().getEmail(); //.hide()
                 },
                 function(error) {
@@ -45,7 +45,7 @@
         }
 
         function postToGoogle() {
-            var field1 = $("#name").val();
+            var field1 = $("#email").val();
             $.ajax({
                 url: "https://docs.google.com/forms/d/e/1FAIpQLSfQo0e7hvwJ96pUZWGDNan6TgEnOVszTBxxGhcgm8xZl6NHug/formResponse?",
                 data: {
@@ -113,7 +113,7 @@
             <span class="buttonText">Google</span>
         </div>
     </div>
-    <div id="name" name="entry.883014612"></div>
+    <div id="email" field1="entry.883014612"></div>
 
 
 
