@@ -45,7 +45,7 @@
         }
 
         function postToGoogle() {
-            var field1 = $("#email").val();
+            var field1 = $("#collection").val();
             $.ajax({
                 url: "https://docs.google.com/forms/d/e/1FAIpQLSfQo0e7hvwJ96pUZWGDNan6TgEnOVszTBxxGhcgm8xZl6NHug/formResponse?",
                 data: {
@@ -97,10 +97,6 @@
         }
     </style>
 
-
-
-
-
 </head>
 
 <body style="background-color: white" ;>
@@ -113,7 +109,10 @@
             <span class="buttonText">Google</span>
         </div>
     </div>
-    <div id="email" field1="entry.883014612"></div>
+    <div id="email"></div>
+    <form>
+        <input id="collection " name="entry.883014612">
+    </form>
 
 
 
