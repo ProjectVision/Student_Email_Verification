@@ -36,8 +36,6 @@
             console.log(element.id);
             auth2.attachClickHandler(element, {},
                 function(googleUser) {
-                    var googleUser.getBasicProfile().getName() = "entry.883014612"; // Trying to define name for entry into form
-
                     document.getElementById('name').innerText = "Signed in as: " +
                         googleUser.getBasicProfile().getName(); //.hide()
                 },
