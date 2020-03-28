@@ -37,7 +37,7 @@
             auth2.attachClickHandler(element, {},
                 function(googleUser) {
                     document.getElementById('name').innerText = "Signed in as: " +
-                        googleUser.getBasicProfile().getName(); //.hide()
+                        googleUser.getBasicProfile().getEmail(); //.hide()
                 },
                 function(error) {
                     alert(JSON.stringify(error, undefined, 2));
