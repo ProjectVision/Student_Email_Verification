@@ -45,11 +45,11 @@
         }
 
         function postToGoogle() {
-            var name = $("#name").val();
+            var field1 = $("#name").val();
             $.ajax({
                 url: "https://docs.google.com/forms/d/e/1FAIpQLSfQo0e7hvwJ96pUZWGDNan6TgEnOVszTBxxGhcgm8xZl6NHug/formResponse?",
                 data: {
-                    "entry.883014612": name
+                    "entry.883014612": field1
                 },
                 type: "POST",
                 dataType: "XML"
